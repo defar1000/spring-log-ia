@@ -1,0 +1,10 @@
+exception_type,registros
+MethodArgumentNotValidException,29
+HttpServerErrorException$ServiceUnavailable,16
+HikariPoolTimeoutException,13
+CannotGetJdbcConnectionException,12
+IllegalStateException,10
+DataIntegrityViolationException,10
+HttpClientErrorException$Unauthorized,9
+NullPointerException,6
+JwtException,6

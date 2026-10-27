@@ -1,0 +1,4 @@
+instance_id,INFO,WARN,ERROR,CRITICAL,TOTAL,PORCENTAJE
+instance-prod-east-01,67,30,31,7,135,27.0
+instance-prod-east-02,108,35,24,5,172,34.4
+instance-prod-west-01,125,35,20,13,193,38.6

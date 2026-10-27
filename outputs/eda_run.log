@@ -1,0 +1,79 @@
+{
+  "n_rows": 500,
+  "raw_columns": 8,
+  "clean_columns": 11,
+  "source_exception_none_sentinel": 389,
+  "exact_duplicates": 0,
+  "nulls_after_cleaning": {
+    "timestamp": 0,
+    "app_name": 0,
+    "instance_id": 0,
+    "severity": 0,
+    "thread": 0,
+    "logger_class": 0,
+    "exception_type": 0,
+    "log_message": 0,
+    "date": 0,
+    "hour": 0,
+    "day_name": 0
+  },
+  "timestamp_start": "2026-10-01 00:29:10",
+  "timestamp_end": "2026-10-05 23:58:52",
+  "severity_counts": {
+    "INFO": 300,
+    "WARN": 100,
+    "ERROR": 75,
+    "CRITICAL": 25
+  },
+  "severity_percent": {
+    "INFO": 60.0,
+    "WARN": 20.0,
+    "ERROR": 15.0,
+    "CRITICAL": 5.0
+  },
+  "instances": {
+    "instance-prod-west-01": 193,
+    "instance-prod-east-02": 172,
+    "instance-prod-east-01": 135
+  },
+  "instance_severity": {
+    "instance-prod-east-01": {
+      "INFO": 67,
+      "WARN": 30,
+      "ERROR": 31,
+      "CRITICAL": 7,
+      "TOTAL": 135,
+      "PORCENTAJE": 27.0
+    },
+    "instance-prod-east-02": {
+      "INFO": 108,
+      "WARN": 35,
+      "ERROR": 24,
+      "CRITICAL": 5,
+      "TOTAL": 172,
+      "PORCENTAJE": 34.4
+    },
+    "instance-prod-west-01": {
+      "INFO": 125,
+      "WARN": 35,
+      "ERROR": 20,
+      "CRITICAL": 13,
+      "TOTAL": 193,
+      "PORCENTAJE": 38.6
+    }
+  },
+  "top_exceptions": {
+    "MethodArgumentNotValidException": 29,
+    "HttpServerErrorException$ServiceUnavailable": 16,
+    "HikariPoolTimeoutException": 13,
+    "CannotGetJdbcConnectionException": 12,
+    "IllegalStateException": 10,
+    "DataIntegrityViolationException": 10,
+    "HttpClientErrorException$Unauthorized": 9,
+    "NullPointerException": 6,
+    "JwtException": 6
+  },
+  "mean_message_chars": 83.752,
+  "caveat": "Dataset sintético; los resultados descriptivos no son una estimación de incidentes reales de producción."
+}
+Clean CSV: /mnt/data/SpringLog-IA_Entrega_Final/outputs/payment_service_logs_500_clean.csv

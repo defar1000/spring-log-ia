@@ -1,0 +1,31 @@
+COMPARACIÓN DE MODELOS
+                     Modelo  Accuracy  Precision_macro  Recall_macro  F1_macro  F1_weighted
+Random Forest (100 árboles)    0.9300           0.9739        0.9125    0.9332       0.9245
+        Regresión logística    1.0000           1.0000        1.0000    1.0000       1.0000
+    Naive Bayes multinomial    1.0000           1.0000        1.0000    1.0000       1.0000
+          Árbol de decisión    0.9800           0.9919        0.9750    0.9827       0.9796
+
+REPORTE RANDOM FOREST
+              precision    recall  f1-score   support
+
+    CRITICAL       1.00      1.00      1.00         5
+       ERROR       1.00      1.00      1.00        15
+        INFO       0.90      1.00      0.94        60
+        WARN       1.00      0.65      0.79        20
+
+    accuracy                           0.93       100
+   macro avg       0.97      0.91      0.93       100
+weighted avg       0.94      0.93      0.92       100
+
+
+MATRIZ CONFUSIÓN filas=real, columnas=pred; orden ['CRITICAL', 'ERROR', 'INFO', 'WARN']
+[[ 5  0  0  0]
+ [ 0 15  0  0]
+ [ 0  0 60  0]
+ [ 0  0  7 13]]
+
+LATENCIA {'n_single_predictions_measured': 30, 'median_ms': 21.51848605, 'p95_ms': 23.641227625, 'note': 'Medición local de inferencia por registro; varía por hardware y carga. No equivale a MTTR.'}
+
+DEMO: CRITICAL
+
+Guardado: /mnt/data/SpringLog-IA_Entrega_Final/outputs/springlog_random_forest.joblib

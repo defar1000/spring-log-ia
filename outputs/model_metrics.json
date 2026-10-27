@@ -1,0 +1,144 @@
+{
+  "dataset_rows": 500,
+  "train_rows": 400,
+  "test_rows": 100,
+  "split": "80/20 estratificada",
+  "random_state": 42,
+  "selected_model": "Random Forest (100 árboles)",
+  "selected_model_config": {
+    "n_estimators": 100,
+    "class_weight": "balanced",
+    "tfidf_ngram_range": [
+      1,
+      2
+    ],
+    "tfidf_max_features": 1000,
+    "sublinear_tf": true
+  },
+  "accuracy": 0.93,
+  "precision_macro": 0.9738805970149254,
+  "recall_macro": 0.9125,
+  "f1_macro": 0.9331901694106419,
+  "f1_weighted": 0.9245048914340254,
+  "labels_order": [
+    "CRITICAL",
+    "ERROR",
+    "INFO",
+    "WARN"
+  ],
+  "confusion_matrix": [
+    [
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      15,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      60,
+      0
+    ],
+    [
+      0,
+      0,
+      7,
+      13
+    ]
+  ],
+  "classification_report": {
+    "CRITICAL": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "ERROR": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "INFO": {
+      "precision": 0.8955223880597015,
+      "recall": 1.0,
+      "f1-score": 0.9448818897637795,
+      "support": 60.0
+    },
+    "WARN": {
+      "precision": 1.0,
+      "recall": 0.65,
+      "f1-score": 0.7878787878787878,
+      "support": 20.0
+    },
+    "accuracy": 0.93,
+    "macro avg": {
+      "precision": 0.9738805970149254,
+      "recall": 0.9125,
+      "f1-score": 0.9331901694106419,
+      "support": 100.0
+    },
+    "weighted avg": {
+      "precision": 0.9373134328358209,
+      "recall": 0.93,
+      "f1-score": 0.9245048914340254,
+      "support": 100.0
+    }
+  },
+  "model_comparison": [
+    {
+      "Modelo": "Random Forest (100 árboles)",
+      "Accuracy": 0.93,
+      "Precision_macro": 0.9738805970149254,
+      "Recall_macro": 0.9125,
+      "F1_macro": 0.9331901694106419,
+      "F1_weighted": 0.9245048914340254
+    },
+    {
+      "Modelo": "Regresión logística",
+      "Accuracy": 1.0,
+      "Precision_macro": 1.0,
+      "Recall_macro": 1.0,
+      "F1_macro": 1.0,
+      "F1_weighted": 1.0
+    },
+    {
+      "Modelo": "Naive Bayes multinomial",
+      "Accuracy": 1.0,
+      "Precision_macro": 1.0,
+      "Recall_macro": 1.0,
+      "F1_macro": 1.0,
+      "F1_weighted": 1.0
+    },
+    {
+      "Modelo": "Árbol de decisión",
+      "Accuracy": 0.98,
+      "Precision_macro": 0.9919354838709677,
+      "Recall_macro": 0.975,
+      "F1_macro": 0.9827437446074202,
+      "F1_weighted": 0.9796376186367559
+    }
+  ],
+  "latency": {
+    "n_single_predictions_measured": 30,
+    "median_ms": 21.51848605,
+    "p95_ms": 23.641227625,
+    "note": "Medición local de inferencia por registro; varía por hardware y carga. No equivale a MTTR."
+  },
+  "demo_prediction": {
+    "input": "TransactionRepository HikariPoolTimeoutException Connection is not available, request timed out after 30000ms",
+    "predicted_severity": "CRITICAL"
+  },
+  "caveats": [
+    "Dataset sintético y pequeño; distribución de severidad definida al generarlo.",
+    "El resultado de prueba no mide desempeño con logs reales.",
+    "Logistic Regression y Naive Bayes obtuvieron resultados perfectos en esta partición sintética; eso apunta a patrones demasiado separables y requiere validación con plantillas nuevas.",
+    "La auditoría exportada de 25 casos es un insumo para revisión humana, no una certificación independiente de producción."
+  ]
+}

@@ -1,0 +1,5 @@
+﻿Modelo,Accuracy,Precision_macro,Recall_macro,F1_macro,F1_weighted
+Random Forest (100 árboles),0.93,0.9738805970149254,0.9125,0.9331901694106419,0.9245048914340254
+Regresión logística,1.0,1.0,1.0,1.0,1.0
+Naive Bayes multinomial,1.0,1.0,1.0,1.0,1.0
+Árbol de decisión,0.98,0.9919354838709677,0.975,0.9827437446074202,0.9796376186367559

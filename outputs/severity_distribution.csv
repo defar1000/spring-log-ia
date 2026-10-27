@@ -1,0 +1,5 @@
+severity,registros
+INFO,300
+WARN,100
+ERROR,75
+CRITICAL,25

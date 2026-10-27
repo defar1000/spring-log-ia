@@ -1,0 +1,26 @@
+﻿source_row,severity_real,severity_predicha,coincide,mensaje,logger_class,exception_type,confianza_prediccion
+8,INFO,INFO,True,POST /api/v1/payments returned status=201 transactionId=txn-000016 userId=[REDACTED_ID],com.empresa.payment.controller.PaymentController,NO_APLICA,1.0
+20,WARN,WARN,True,Database connection acquisition latency elevated durationMs=3236 thresholdMs=500,com.empresa.payment.repository.TransactionRepository,NO_APLICA,0.56
+23,INFO,INFO,True,Idempotency key accepted key=[REDACTED] transactionId=txn-000091,com.empresa.payment.service.PaymentServiceImpl,NO_APLICA,1.0
+25,WARN,WARN,True,Retrying transient payment gateway failure transactionId=txn-000271 attempt=3 maxAttempts=3,com.empresa.payment.service.PaymentServiceImpl,NO_APLICA,1.0
+26,INFO,INFO,True,Payment gateway response received transactionId=txn-000344 status=APPROVED durationMs=3102,com.empresa.payment.client.GatewayClient,NO_APLICA,0.99
+36,WARN,INFO,False,Payment gateway response slower than threshold transactionId=txn-000432 durationMs=3768 thresholdMs=1500,com.empresa.payment.client.GatewayClient,NO_APLICA,0.51
+47,INFO,INFO,True,JWT authentication successful subject=userId=[REDACTED_ID] authorities=ROLE_CUSTOMER,com.empresa.payment.config.SecurityConfig,NO_APLICA,1.0
+49,WARN,INFO,False,Payment gateway response slower than threshold transactionId=txn-000383 durationMs=2709 thresholdMs=1500,com.empresa.payment.client.GatewayClient,NO_APLICA,0.51
+50,INFO,INFO,True,Transaction lookup completed transactionId=txn-000167 durationMs=2671,com.empresa.payment.repository.TransactionRepository,NO_APLICA,1.0
+51,INFO,INFO,True,Scheduled reconciliation completed checkedTransactions=30 mismatches=0,com.empresa.payment.scheduler.ReconciliationScheduler,NO_APLICA,1.0
+60,WARN,INFO,False,Payment processing approaching timeout transactionId=txn-000125 elapsedMs=3760,com.empresa.payment.service.PaymentServiceImpl,NO_APLICA,0.67
+62,WARN,WARN,True,Retrying transient payment gateway failure transactionId=txn-000074 attempt=3 maxAttempts=3,com.empresa.payment.service.PaymentServiceImpl,NO_APLICA,1.0
+71,WARN,WARN,True,Database connection pool utilization high activeConnections=18 maxPoolSize=20,com.empresa.payment.health.PaymentHealthIndicator,NO_APLICA,1.0
+138,CRITICAL,CRITICAL,True,CRITICAL database connection pool exhausted pool=HikariPool-1 timeoutMs=30000 activeConnections=20 maxPoolSize=20,com.empresa.payment.repository.TransactionRepository,HikariPoolTimeoutException,0.99
+146,ERROR,ERROR,True,Payment state transition rejected transactionId=txn-000094 fromStatus=COMPLETED toStatus=PROCESSING,com.empresa.payment.service.PaymentServiceImpl,IllegalStateException,1.0
+159,CRITICAL,CRITICAL,True,CRITICAL JWT verification failures exceeded threshold source=api-gateway token=[REDACTED],com.empresa.payment.config.SecurityConfig,JwtException,0.97
+183,CRITICAL,CRITICAL,True,CRITICAL JWT verification failures exceeded threshold source=api-gateway token=[REDACTED],com.empresa.payment.config.SecurityConfig,JwtException,0.97
+187,ERROR,ERROR,True,Failed to acquire database connection operation=saveTransaction transactionId=txn-000453,com.empresa.payment.repository.TransactionRepository,CannotGetJdbcConnectionException,0.81
+214,CRITICAL,CRITICAL,True,CRITICAL payment persistence unavailable; transaction outcome uncertain transactionId=txn-000153,com.empresa.payment.service.PaymentServiceImpl,CannotGetJdbcConnectionException,0.86
+266,ERROR,ERROR,True,Payment gateway unavailable status=503 transactionId=txn-000486 retryable=true,com.empresa.payment.client.GatewayClient,HttpServerErrorException$ServiceUnavailable,0.79
+283,ERROR,ERROR,True,Payment gateway unavailable status=503 transactionId=txn-000244 retryable=true,com.empresa.payment.client.GatewayClient,HttpServerErrorException$ServiceUnavailable,0.79
+306,CRITICAL,CRITICAL,True,CRITICAL database connection pool exhausted pool=HikariPool-1 timeoutMs=30000 activeConnections=20 maxPoolSize=20,com.empresa.payment.repository.TransactionRepository,HikariPoolTimeoutException,0.99
+308,ERROR,ERROR,True,Payment gateway authentication failed status=401 token=[REDACTED] requestId=req-000485,com.empresa.payment.config.SecurityConfig,HttpClientErrorException$Unauthorized,1.0
+321,ERROR,ERROR,True,Payment state transition rejected transactionId=txn-000242 fromStatus=COMPLETED toStatus=PROCESSING,com.empresa.payment.service.PaymentServiceImpl,IllegalStateException,1.0
+326,ERROR,ERROR,True,REST request validation failed field=paymentMethod reason=must not be blank requestId=req-000258,com.empresa.payment.controller.PaymentController,MethodArgumentNotValidException,0.93
